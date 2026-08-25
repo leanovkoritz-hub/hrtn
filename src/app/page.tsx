@@ -10,14 +10,6 @@ export default function HomePage() {
           <div className="flex items-center gap-2 font-semibold text-lg text-slate-900">
             <PackageIcon className="h-6 w-6 text-brand-600" />
             SimTrack
-          </div>
-          <Link
-            href="/admin"
-            className="text-sm font-medium text-slate-500 hover:text-brand-600 transition-colors"
-          >
-            Admin login
-          </Link>
-        </div>
       </header>
 
       <section className="flex-1 flex items-center justify-center px-6">
@@ -26,12 +18,10 @@ export default function HomePage() {
             Track your package
           </h1>
           <p className="text-slate-500 mb-8">
-            Enter your tracking number to see the latest simulated shipment status.
+            Enter your tracking number.
           </p>
           <TrackSearchForm />
           <p className="mt-10 text-xs text-slate-400 max-w-md mx-auto">
-            SimTrack is an internal, simulated tracking demo built for this store. It is not
-            affiliated with, and does not pull data from, UPS, FedEx, USPS, or DHL.
           </p>
         </div>
       </section>
