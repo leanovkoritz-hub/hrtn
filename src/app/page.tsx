@@ -17,9 +17,8 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-slate-50">
       <header className="bg-black px-6 py-4 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-2">
-          {/* Plain img tag reads directly from public/logo.png */}
           <img
-            src="/logo.png"
+            src="YOUR_DIRECT_IMAGE_URL_HERE"
             alt="SimTrack Logo"
             className="h-12 w-auto object-contain"
           />
