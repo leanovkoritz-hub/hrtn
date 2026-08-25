@@ -6,8 +6,12 @@ import { generateTimeline } from '@/lib/routeGenerator';
 // Regenerates the entire tracking_events timeline for a shipment from its
 // current origin/destination/date fields. Any manual edits to events are
 // discarded and replaced with a fresh auto-generated route.
-export async function POST(_req: NextRequest, { params }: { params: { id: string } }) {
-  const shipmentId = parseInt(params.id, 10);
+export async function POST(
+  _req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const resolvedParams = await params;
+  const shipmentId = parseInt(resolvedParams.id, 10);
   const shipment = getShipmentById(shipmentId);
   if (!shipment) return NextResponse.json({ error: 'Shipment not found' }, { status: 404 });
 
