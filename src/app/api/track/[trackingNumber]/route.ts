@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getShipmentByTrackingNumber, refreshShipmentStatus } from '@/lib/repository';
 
-export async function GET(_req: NextRequest, { params }: { params: { trackingNumber: string } }) {
-  const raw = params.trackingNumber;
+export async function GET(
+  _req: NextRequest,
+  { params }: { params: Promise<{ trackingNumber: string }> }
+) {
+  const resolvedParams = await params;
+  const raw = resolvedParams.trackingNumber;
   if (!raw || typeof raw !== 'string' || raw.length > 40) {
     return NextResponse.json({ error: 'Invalid tracking number.' }, { status: 400 });
   }
