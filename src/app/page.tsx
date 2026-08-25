@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 export default function HomePage() {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -18,13 +17,11 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-slate-50">
       <header className="bg-black px-6 py-4 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-2">
-          <Image
+          {/* Plain img tag reads directly from public/logo.png */}
+          <img
             src="/logo.png"
             alt="SimTrack Logo"
-            width={320}
-            height={60}
-            className="h-10 w-auto object-contain"
-            priority
+            className="h-12 w-auto object-contain"
           />
         </div>
       </header>
