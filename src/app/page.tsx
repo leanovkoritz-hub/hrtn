@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function HomePage() {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -15,9 +16,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <header className="border-b bg-white px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 font-bold text-xl text-slate-900">
-          SimTrack
+      <header className="bg-black px-6 py-4 flex items-center justify-between shadow-md">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="SimTrack Logo"
+            width={320}
+            height={60}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </div>
       </header>
 
@@ -27,7 +35,7 @@ export default function HomePage() {
             Track your package
           </h1>
           <p className="text-slate-600 mb-8">
-            Enter your tracking number below to see real-time status updates for your shipment.
+            Track your package to your destination track and ship and deliver.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
