@@ -15,45 +15,45 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <header className="bg-black px-6 py-4 flex items-center justify-between shadow-md">
-        <div className="flex items-center gap-3">
-          {/* Inline SVG Logo */}
+      <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shadow-sm">
+        <div className="flex items-center gap-2">
+          {/* Clean Vector Logo for White Background */}
           <svg
-            viewBox="0 0 950 160"
-            className="h-12 w-auto"
+            viewBox="0 0 850 140"
+            className="h-10 w-auto"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             {/* Speed Lines */}
-            <path d="M 10 58 L 70 58 C 73 58 75 60 75 63 C 75 66 73 68 70 68 L 10 68 C 7 68 5 66 5 63 C 5 60 7 58 10 58 Z" fill="#0066FF" />
-            <path d="M 30 78 L 95 78 C 98 78 100 80 100 83 C 100 86 98 88 95 88 L 30 88 C 27 88 25 86 25 83 C 25 80 27 78 30 78 Z" fill="#0066FF" />
-            <path d="M 55 98 L 120 98 C 123 98 125 100 125 103 C 125 106 123 108 120 108 L 55 108 C 52 108 50 106 50 103 C 50 100 52 98 55 98 Z" fill="#0066FF" />
+            <path d="M 10 50 L 60 50 C 63 50 65 52 65 55 C 65 58 63 60 60 60 L 10 60 C 7 60 5 58 5 55 C 5 52 7 50 10 50 Z" fill="#0A5CDB" />
+            <path d="M 25 70 L 80 70 C 83 70 85 72 85 75 C 85 78 83 80 80 80 L 25 80 C 22 80 20 78 20 75 C 20 72 22 70 25 70 Z" fill="#0A5CDB" />
+            <path d="M 45 90 L 100 90 C 103 90 105 92 105 95 C 105 98 103 100 100 100 L 45 100 C 42 100 40 98 40 95 C 40 92 42 90 45 90 Z" fill="#0A5CDB" />
             
-            {/* Stylized 'S' Icon with Box */}
-            <path d="M 195 28 L 110 28 C 75 28 50 48 50 73 C 50 93 68 105 100 110 L 150 118 C 170 121 180 128 180 138 C 180 148 165 155 140 155 L 45 155 L 60 135 L 140 135 C 150 135 158 132 158 126 C 158 120 148 115 130 112 L 80 104 C 45 98 30 83 30 58 C 30 32 60 10 105 10 L 205 10 Z" fill="#0055FF" />
+            {/* Stylized 'S' Icon */}
+            <path d="M 175 25 L 100 25 C 70 25 45 42 45 65 C 45 83 60 93 90 98 L 135 105 C 153 108 162 114 162 123 C 162 132 148 138 125 138 L 40 138 L 53 120 L 125 120 C 134 120 141 117 141 112 C 141 106 132 102 116 99 L 70 92 C 38 87 25 74 25 51 C 25 28 52 9 95 9 L 185 9 Z" fill="#0A5CDB" />
             
             {/* Box inside S */}
-            <polygon points="115,50 160,35 185,55 140,70" fill="#E67E22" stroke="#1A252C" strokeWidth="3" />
-            <polygon points="115,50 140,70 140,105 115,85" fill="#D35400" stroke="#1A252C" strokeWidth="3" />
-            <polygon points="140,70 185,55 185,90 140,105" fill="#E67E22" stroke="#1A252C" strokeWidth="3" />
+            <polygon points="105,45 145,32 168,50 128,63" fill="#E67E22" stroke="#1A252C" strokeWidth="2.5" />
+            <polygon points="105,45 128,63 128,94 105,76" fill="#D35400" stroke="#1A252C" strokeWidth="2.5" />
+            <polygon points="128,63 168,50 168,81 128,94" fill="#E67E22" stroke="#1A252C" strokeWidth="2.5" />
             
-            {/* Simtrack Text */}
-            <text x="200" y="112" fill="#0052CC" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="105" fontStyle="italic">Simtrack</text>
+            {/* SimTrack Main Text */}
+            <text x="190" y="100" fill="#0A5CDB" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="90" fontStyle="italic">SimTrack</text>
 
-            {/* Subtext under Simtrack */}
-            <text x="215" y="142" fill="#0A369D" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" fontSize="18" letterSpacing="7">TRACK • SHIP • DELIVER</text>
+            {/* Subtext */}
+            <text x="200" y="125" fill="#0B3C91" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700" fontSize="16" letterSpacing="6">TRACK • SHIP • DELIVER</text>
             
-            {/* Divider Line */}
-            <line x1="615" y1="18" x2="615" y2="148" stroke="#888888" strokeWidth="3" />
+            {/* Vertical Separator */}
+            <line x1="620" y1="15" x2="620" y2="125" stroke="#CBD5E1" strokeWidth="2.5" />
             
-            {/* Partnership Header */}
-            <text x="640" y="38" fill="#1D4ED8" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" fontSize="16" letterSpacing="4">IN PARTNERSHIP WITH</text>
+            {/* In Partnership Header */}
+            <text x="640" y="32" fill="#0A5CDB" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700" fontSize="13" letterSpacing="2.5">IN PARTNERSHIP WITH</text>
             
-            {/* FedEx Logo */}
-            <g transform="translate(635, 52)">
-              <text x="0" y="70" fill="#4D148C" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="82">Fed</text>
-              <text x="142" y="70" fill="#FF6600" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="82">Ex</text>
-              <text x="250" y="20" fill="#FF6600" fontFamily="Arial, Helvetica, sans-serif" fontWeight="bold" fontSize="20">®</text>
+            {/* FedEx Brand */}
+            <g transform="translate(640, 42)">
+              <text x="0" y="65" fill="#4D148C" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="72">Fed</text>
+              <text x="125" y="65" fill="#FF6600" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="72">Ex</text>
+              <text x="215" y="20" fill="#FF6600" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="bold" fontSize="16">®</text>
             </g>
           </svg>
         </div>
