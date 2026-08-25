@@ -5,10 +5,11 @@ import { trackingEventSchema } from '@/lib/validation';
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string; eventId: string } }
+  { params }: { params: Promise<{ id: string; eventId: string }> }
 ) {
-  const shipmentId = parseInt(params.id, 10);
-  const eventId = parseInt(params.eventId, 10);
+  const resolvedParams = await params;
+  const shipmentId = parseInt(resolvedParams.id, 10);
+  const eventId = parseInt(resolvedParams.eventId, 10);
   const shipment = getShipmentById(shipmentId);
   if (!shipment) return NextResponse.json({ error: 'Shipment not found' }, { status: 404 });
 
@@ -47,10 +48,11 @@ export async function PUT(
 
 export async function DELETE(
   _req: NextRequest,
-  { params }: { params: { id: string; eventId: string } }
+  { params }: { params: Promise<{ id: string; eventId: string }> }
 ) {
-  const shipmentId = parseInt(params.id, 10);
-  const eventId = parseInt(params.eventId, 10);
+  const resolvedParams = await params;
+  const shipmentId = parseInt(resolvedParams.id, 10);
+  const eventId = parseInt(resolvedParams.eventId, 10);
   const shipment = getShipmentById(shipmentId);
   if (!shipment) return NextResponse.json({ error: 'Shipment not found' }, { status: 404 });
 
