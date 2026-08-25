@@ -3,8 +3,12 @@ import { db } from '@/lib/db';
 import { getShipmentById, refreshShipmentStatus } from '@/lib/repository';
 import { trackingEventSchema, reorderEventsSchema } from '@/lib/validation';
 
-export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
-  const shipmentId = parseInt(params.id, 10);
+export async function POST(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const resolvedParams = await params;
+  const shipmentId = parseInt(resolvedParams.id, 10);
   const shipment = getShipmentById(shipmentId);
   if (!shipment) return NextResponse.json({ error: 'Shipment not found' }, { status: 404 });
 
@@ -28,8 +32,12 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 }
 
 // Reorder all events for a shipment: body = { order: [eventId, eventId, ...] } in new order.
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  const shipmentId = parseInt(params.id, 10);
+export async function PUT(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const resolvedParams = await params;
+  const shipmentId = parseInt(resolvedParams.id, 10);
   const shipment = getShipmentById(shipmentId);
   if (!shipment) return NextResponse.json({ error: 'Shipment not found' }, { status: 404 });
 
